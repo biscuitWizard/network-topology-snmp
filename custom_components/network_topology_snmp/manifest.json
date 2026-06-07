@@ -8,5 +8,5 @@
   "config_flow": true,
   "integration_type": "device",
   "iot_class": "local_polling",
-  "requirements": ["pysnmp>=7.1.16"]
+  "requirements": ["pysnmp==7.1.16"]
 }
