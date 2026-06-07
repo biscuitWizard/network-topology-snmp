@@ -1,13 +1,16 @@
-name: Lint
+name: Release
 
 on:
   push:
-  pull_request:
-  workflow_dispatch:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
 
 jobs:
-  python:
-    name: Python
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,3 +24,5 @@ jobs:
       - name: Compile Python files
         run: python -m compileall custom_components scripts
 
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
