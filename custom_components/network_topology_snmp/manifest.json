@@ -1,12 +1,12 @@
 {
   "domain": "network_topology_snmp",
   "name": "Network Topology SNMP",
-  "version": "0.1.1",
-  "documentation": "https://github.com/biscuitWizard/network-topology-snmp",
-  "issue_tracker": "https://github.com/biscuitWizard/network-topology-snmp/issues",
   "codeowners": ["@biscuitWizard"],
   "config_flow": true,
+  "documentation": "https://github.com/biscuitWizard/network-topology-snmp",
   "integration_type": "device",
   "iot_class": "local_polling",
-  "requirements": ["pysnmp==7.1.16"]
+  "issue_tracker": "https://github.com/biscuitWizard/network-topology-snmp/issues",
+  "requirements": ["pysnmp==7.1.16"],
+  "version": "0.1.2"
 }
