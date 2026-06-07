@@ -1,0 +1,47 @@
+name: Feature request
+description: Suggest an improvement for the Network Topology SNMP integration
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement. Please describe the Home Assistant or SNMP use case this would support.
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What are you trying to accomplish with the integration?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior, entities, sensors, or configuration options you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: devices
+    attributes:
+      label: Devices or SNMP data involved
+      description: Include device vendor/model, SNMP version, useful OIDs, MIB names, or sample sanitized output if relevant.
+      placeholder: "Example: LLDP neighbor data from switch model X using OID ..."
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Share any workarounds, other integrations, or tools you have tried.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I removed SNMP credentials, community strings, and other secrets from this request.
+          required: true
+        - label: I searched existing issues before opening this request.
+          required: true

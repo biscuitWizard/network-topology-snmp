@@ -1,0 +1,58 @@
+# Network Topology Card live status example.
+# Companion card: https://github.com/biscuitWizard/network-topology-card
+#
+# `telemetry_entity` points at the sensor created by the
+# network_topology_snmp integration. `port_map` maps visual card port IDs to
+# SNMP ifName values from sensor.<name>_ports attributes.ports.
+
+type: custom:network-topology-card
+title: Core Network
+
+devices:
+  - id: core-switch
+    name: Core Switch
+    template: cisco-4500x
+    x: 0
+    "y": 0
+    telemetry_entity: sensor.core_switch_ports
+    port_map:
+      "1": Te1/1
+      "2": Te1/2
+      "3": Te1/3
+      "4": Te1/4
+      "5": Te1/5
+      "6": Te1/6
+
+  - id: firewall
+    name: Firewall
+    template: generic-small-2eth
+    x: -320
+    "y": -120
+
+  - id: server
+    name: Server
+    template: generic-small-1eth
+    x: 320
+    "y": 120
+
+links:
+  - id: firewall-uplink
+    name: Firewall Uplink
+    type: link
+    state: up
+    endpoints:
+      - device: firewall
+        ports: [ETH0]
+      - device: core-switch
+        ports: ["1"]
+
+  - id: server-uplink
+    name: Server Uplink
+    type: link
+    state: up
+    endpoints:
+      - device: server
+        ports: [ETH0]
+      - device: core-switch
+        ports: ["2"]
+

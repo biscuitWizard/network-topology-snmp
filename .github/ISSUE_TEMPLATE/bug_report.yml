@@ -1,0 +1,78 @@
+name: Bug report
+description: Report a problem with the Network Topology SNMP integration
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please include enough detail to reproduce the issue in Home Assistant.
+  - type: input
+    id: home_assistant_version
+    attributes:
+      label: Home Assistant version
+      description: Find this under Settings > About.
+      placeholder: "2026.6.0"
+    validations:
+      required: true
+  - type: input
+    id: integration_version
+    attributes:
+      label: Integration version
+      description: The Network Topology SNMP version installed from HACS.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: Installation method
+      options:
+        - HACS
+        - Manual custom_components install
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the behavior you saw and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps or configuration actions that trigger the issue.
+      placeholder: |
+        1. Add the integration
+        2. Configure SNMP host ...
+        3. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: snmp_environment
+    attributes:
+      label: SNMP environment
+      description: Include device vendor/model, SNMP version, auth/privacy mode if applicable, and whether polling works with another SNMP tool.
+      placeholder: "Example: Cisco switch, SNMP v2c, community configured, snmpwalk succeeds from the Home Assistant host."
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste relevant Home Assistant logs or diagnostics. Remove secrets, community strings, passwords, and private addresses if needed.
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I removed SNMP credentials, community strings, and other secrets from this report.
+          required: true
+        - label: I searched existing issues before opening this report.
+          required: true

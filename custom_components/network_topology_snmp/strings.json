@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a switch",
+        "description": "Poll a switch over SNMP v2c for per-port link status.",
+        "data": {
+          "name": "Name",
+          "host": "Host / IP address",
+          "port": "SNMP port",
+          "community": "SNMP community string",
+          "scan_interval": "Poll interval (seconds)",
+          "flap_window": "Flap detection window (seconds)",
+          "flap_threshold": "Flap threshold (transitions in window)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the switch over SNMP. Check the host, port, and community string.",
+      "unknown": "Unexpected error: {error}"
+    },
+    "abort": {
+      "already_configured": "This switch is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling and flap detection",
+        "data": {
+          "scan_interval": "Poll interval (seconds)",
+          "flap_window": "Flap detection window (seconds)",
+          "flap_threshold": "Flap threshold (transitions in window)"
+        }
+      }
+    }
+  }
+}
